@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#191919"
     tools:context=".MainActivity">
 
     <TextView
@@ -10,36 +12,64 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="93dp"
-        android:fontFamily="monospace"
-        android:lineSpacingExtra="8sp"
+        android:layout_marginTop="200dp"
+        android:fontFamily="sans-serif"
         android:text="Welcome to"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        android:textStyle="bold"
         android:typeface="monospace" />
 
     <Button
         android:id="@+id/googleButton"
         android:layout_width="wrap_content"
-        android:layout_height="73dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="105dp"
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="100dp"
-        android:text="Continue with Google" />
+        android:text="Continue with Google"
+        android:textSize="24sp"
+        app:icon="@drawable/googleg_standard_color_18" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeText"
-        android:layout_marginTop="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="sans-serif"
         android:text="Brain Vault "
         android:textAlignment="center"
-        android:textSize="80sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="90sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="364dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-113dp"
+        app:srcCompat="@drawable/corner" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="357dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-98dp"
+        android:rotationX="180"
+        android:rotationY="180"
+        app:srcCompat="@drawable/corner" />
 
 
 </RelativeLayout>
