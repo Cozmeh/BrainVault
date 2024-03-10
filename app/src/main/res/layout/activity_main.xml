@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="93dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="8sp"
+        android:text="Welcome to"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:typeface="monospace" />
+
+    <Button
+        android:id="@+id/googleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="100dp"
+        android:text="Continue with Google" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_below="@+id/welcomeText"
+        android:layout_marginTop="30dp"
+        android:text="Brain Vault "
+        android:textAlignment="center"
+        android:textSize="80sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--tools:context=".MainActivity">-->
+
+<!--<fragment-->
+<!--    android:id="@+id/nav_host_fragment"-->
+<!--    android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="0dp"-->
+<!--    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--    app:layout_constraintRight_toRightOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:defaultNavHost="true"-->
+<!--    app:navGraph="@navigation/nav_graph" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+

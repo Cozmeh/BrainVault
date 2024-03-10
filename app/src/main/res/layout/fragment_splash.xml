@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SplashFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="8sp"
+        android:text="Welcome to"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_below="@+id/welcomeText"
+        android:layout_marginTop="150dp"
+        android:text="Brain Vault "
+        android:textAlignment="center"
+        android:textSize="80sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

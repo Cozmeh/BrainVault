@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "140787206305",
+    "project_id": "brainvault-581ee",
+    "storage_bucket": "brainvault-581ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140787206305:android:e35059087ac00f4ece08e0",
+        "android_client_info": {
+          "package_name": "com.brainvault.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140787206305-a3ucs92i82r727e5jge6aqkrt9pvhpqr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brainvault.app",
+            "certificate_hash": "ed4c88211ce2f31f35afd965a5898f58ad6d40e6"
+          }
+        },
+        {
+          "client_id": "140787206305-m4m3ir2krkcv68hckdi1kb4lhfvs2an6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmbtcSC5l0rwIYbYCViVX-ZodWRFScDjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140787206305-m4m3ir2krkcv68hckdi1kb4lhfvs2an6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
