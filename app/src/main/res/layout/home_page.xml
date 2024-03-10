@@ -7,4 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
+
+    <SearchView
+        android:id="@+id/searcher"
+        android:layout_width="0dp"
+        android:queryHint="Search Notes"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="#4E4E4E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
