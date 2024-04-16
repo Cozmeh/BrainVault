@@ -45,7 +45,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="28dp"
         android:fontFamily="sans-serif"
-        android:text="Brain Vault "
+        android:text="Brain\Vault "
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
