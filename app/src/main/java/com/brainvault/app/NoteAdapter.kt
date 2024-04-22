@@ -1,17 +1,12 @@
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.brainvault.app.OnNoteItemClickListener
 import com.brainvault.app.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 
-class NoteAdapter(private val onDeleteClickListener: (String) -> Unit) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter(private val onDeleteClickListener: (String) -> Unit ,private val onUpdateClickListener: (String, String) -> Unit) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     private var notes: List<Pair<String, String>> = ArrayList()
 
@@ -35,6 +30,13 @@ class NoteAdapter(private val onDeleteClickListener: (String) -> Unit) : Recycle
         val note = notes[position]
         holder.titleTextView.text = note.first
         holder.contentTextView.text = note.second
+        // Long click listener for update functionality
+        holder.itemView.setOnLongClickListener {
+            val title = note.first
+            val content = note.second
+            onUpdateClickListener(title, content)
+            true // Return true to consume the long click event
+        }
         // Delete button click listener
         holder.deleteButton.setOnClickListener {
             onDeleteClickListener(note.first)

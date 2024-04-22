@@ -17,7 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
+        android:inputType="textShortMessage"
+        android:maxLength="50"
         android:paddingLeft="10dp"
         android:hint="Title"/>
 
@@ -26,7 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
+        android:maxLength="200"
+        android:inputType="textLongMessage"
+        android:lines="3"
         android:paddingLeft="10dp"
         android:hint="Content"/>
 

@@ -34,7 +34,7 @@ class HomePage : AppCompatActivity() {
         // recycler view init
         recyclerView = findViewById(R.id.recyclerViewNotes)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = NoteAdapter(::deleteNote)
+        adapter = NoteAdapter(::deleteNote, ::showUpdateBottomSheet)
         recyclerView.adapter = adapter
 
         // general variable
@@ -124,7 +124,7 @@ class HomePage : AppCompatActivity() {
     // opening the bottom sheet
     private fun openBottomNavBar() {
         val bottomSheetDialog = BottomSheetDialog(this)
-        val bottomNavView = layoutInflater.inflate(R.layout.bottom_nav_bar, null)
+        val bottomNavView = layoutInflater.inflate(R.layout.bottom_sheet, null)
         bottomSheetDialog.setContentView(bottomNavView)
 
         val editTextTitle = bottomNavView.findViewById<EditText>(R.id.editTextTitle)
@@ -137,6 +137,33 @@ class HomePage : AppCompatActivity() {
 
             if (title.isNotEmpty() && content.isNotEmpty()) {
                 saveNote(title, content)
+                bottomSheetDialog.dismiss()
+            } else {
+                Toast.makeText(this, "Please enter title and content", Toast.LENGTH_SHORT).show()
+            }
+        }
+        bottomSheetDialog.show()
+    }
+
+    private fun showUpdateBottomSheet(title: String, content: String) {
+        val bottomSheetDialog = BottomSheetDialog(this)
+        val bottomNavView = layoutInflater.inflate(R.layout.bottom_sheet, null)
+        bottomSheetDialog.setContentView(bottomNavView)
+
+        val editTextTitle = bottomNavView.findViewById<EditText>(R.id.editTextTitle)
+        val editTextContent = bottomNavView.findViewById<EditText>(R.id.editTextContent)
+        val buttonSave = bottomNavView.findViewById<Button>(R.id.buttonSave)
+
+        // Populate fields with existing data
+        editTextTitle.setText(title)
+        editTextContent.setText(content)
+
+        buttonSave.setOnClickListener {
+            val newTitle = editTextTitle.text.toString()
+            val newContent = editTextContent.text.toString()
+
+            if (newTitle.isNotEmpty() && newContent.isNotEmpty()) {
+                updateNote(title, newTitle, newContent)
                 bottomSheetDialog.dismiss()
             } else {
                 Toast.makeText(this, "Please enter title and content", Toast.LENGTH_SHORT).show()
@@ -181,6 +208,26 @@ class HomePage : AppCompatActivity() {
                 }
         }
     }
+
+    private fun updateNote(oldTitle: String, newTitle: String, newContent: String) {
+        val currentUser = auth.currentUser
+        currentUser?.let {
+            val data = hashMapOf("content" to newContent)
+            firestore.collection(it.displayName.toString())
+                .document(oldTitle)
+                .set(data)
+                .addOnSuccessListener {
+                    // Update successful
+                    Toast.makeText(this, "Note updated successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    // Handle error
+                    Log.e("Firestore", "Error updating note", e)
+                    Toast.makeText(this, "Failed to update note", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
 
 
 
