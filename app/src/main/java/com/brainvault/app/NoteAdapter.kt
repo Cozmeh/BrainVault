@@ -1,3 +1,4 @@
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +38,21 @@ class NoteAdapter(private val onDeleteClickListener: (String) -> Unit ,private v
             onUpdateClickListener(title, content)
             true // Return true to consume the long click event
         }
+
         // Delete button click listener
         holder.deleteButton.setOnClickListener {
-            onDeleteClickListener(note.first)
+            val context = holder.itemView.context
+            val alertDialog = AlertDialog.Builder(context)
+                .setTitle("Confirm Deletion")
+                .setMessage("Are you sure you want to delete this note?")
+                .setPositiveButton("Yes") { _, _ ->
+                    onDeleteClickListener(note.first)
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .create()
+            alertDialog.show()
         }
     }
 
