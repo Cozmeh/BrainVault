@@ -69,6 +69,7 @@ class HomePage : AppCompatActivity() {
                             .addOnSuccessListener {
                                 Log.d("Firestore", "Collection created successfully")
                                 Toast.makeText(this, "A collection has been created successfully with the name " + currentUser.displayName.toString(), Toast.LENGTH_SHORT).show()
+                                getData(currentUser)
                             }
                             .addOnFailureListener { e ->
                                 Log.e("Firestore", "Error creating collection", e)
